@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moosetrail.Playgrounds.Scrapers", "Moosetrail.Playgrounds.Scrapers\Moosetrail.Playgrounds.Scrapers.csproj", "{46912E4E-BB89-4F69-8B22-BA0AA2E6423E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moosetrail.Playgrounds.DataClasses", "Moosetrail.Playgrounds.DataClasses\Moosetrail.Playgrounds.DataClasses.csproj", "{1CA858EE-1773-46E1-8173-EDDEE1ABEFF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moosetrail.Playgrounds.Business", "Moosetrail.Playgrounds.Business\Moosetrail.Playgrounds.Business.csproj", "{8763C562-CDC9-47A7-9902-F171B6376E49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.API", "Moosetrail.Playgrounds.API\Moosetrail.Playgrounds.API.csproj", "{F7B32D4B-3446-4120-B19A-F8423FE9AA13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.Services", "Moosetrail.Playgrounds.Services\Moosetrail.Playgrounds.Services.csproj", "{9F365AE8-DB3D-4FF9-A304-14CA4C868A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.DataRepository", "Moosetrail.Playgrounds.DataRepository\Moosetrail.Playgrounds.DataRepository.csproj", "{3459E84D-ECF0-4F93-ABCE-20066C5E0E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.Helpers", "Moosetrail.Playgrounds.Helpers\Moosetrail.Playgrounds.Helpers.csproj", "{ED0A806B-B4F5-41F7-ADEE-274F6D0AC935}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{A60201FA-28FD-492E-B91C-93D803DA70EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.Unittesting.Scrapers", "Moosetrail.Playgrounds.Unittesting.Scrapers\Moosetrail.Playgrounds.Unittesting.Scrapers.csproj", "{A1A76785-2662-43A5-A18E-10F53806CD42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.Unittesting.API", "Moosetrail.Playgrounds.Unittesting.API\Moosetrail.Playgrounds.Unittesting.API.csproj", "{371819DC-9382-4145-8837-ADD16887B5D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46912E4E-BB89-4F69-8B22-BA0AA2E6423E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46912E4E-BB89-4F69-8B22-BA0AA2E6423E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46912E4E-BB89-4F69-8B22-BA0AA2E6423E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46912E4E-BB89-4F69-8B22-BA0AA2E6423E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA858EE-1773-46E1-8173-EDDEE1ABEFF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA858EE-1773-46E1-8173-EDDEE1ABEFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA858EE-1773-46E1-8173-EDDEE1ABEFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA858EE-1773-46E1-8173-EDDEE1ABEFF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8763C562-CDC9-47A7-9902-F171B6376E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8763C562-CDC9-47A7-9902-F171B6376E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8763C562-CDC9-47A7-9902-F171B6376E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8763C562-CDC9-47A7-9902-F171B6376E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7B32D4B-3446-4120-B19A-F8423FE9AA13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B32D4B-3446-4120-B19A-F8423FE9AA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B32D4B-3446-4120-B19A-F8423FE9AA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B32D4B-3446-4120-B19A-F8423FE9AA13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F365AE8-DB3D-4FF9-A304-14CA4C868A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F365AE8-DB3D-4FF9-A304-14CA4C868A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F365AE8-DB3D-4FF9-A304-14CA4C868A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F365AE8-DB3D-4FF9-A304-14CA4C868A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3459E84D-ECF0-4F93-ABCE-20066C5E0E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3459E84D-ECF0-4F93-ABCE-20066C5E0E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3459E84D-ECF0-4F93-ABCE-20066C5E0E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3459E84D-ECF0-4F93-ABCE-20066C5E0E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0A806B-B4F5-41F7-ADEE-274F6D0AC935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0A806B-B4F5-41F7-ADEE-274F6D0AC935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0A806B-B4F5-41F7-ADEE-274F6D0AC935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0A806B-B4F5-41F7-ADEE-274F6D0AC935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1A76785-2662-43A5-A18E-10F53806CD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1A76785-2662-43A5-A18E-10F53806CD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1A76785-2662-43A5-A18E-10F53806CD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1A76785-2662-43A5-A18E-10F53806CD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371819DC-9382-4145-8837-ADD16887B5D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371819DC-9382-4145-8837-ADD16887B5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371819DC-9382-4145-8837-ADD16887B5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371819DC-9382-4145-8837-ADD16887B5D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1A76785-2662-43A5-A18E-10F53806CD42} = {A60201FA-28FD-492E-B91C-93D803DA70EE}
+		{371819DC-9382-4145-8837-ADD16887B5D1} = {A60201FA-28FD-492E-B91C-93D803DA70EE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22A762FD-1EC3-491E-AF5B-2C5CFD72A091}
+	EndGlobalSection
+EndGlobal
