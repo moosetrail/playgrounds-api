@@ -36,6 +36,14 @@ namespace Moosetrail.Playgrounds.WebScrapers.Sweden
                 else
                     url = null;
             }
+
+            foreach (var playgroundLink in playgroundLinks)
+            {
+                var page = getDocumentFromServer(playgroundLink);
+
+                var coordinatesCode = page.DocumentNode.Descendants().FirstOrDefault(x => x.InnerText.Contains("coordinates") && !x.HasChildNodes);
+
+            }
             
 
             return null;
@@ -43,14 +51,7 @@ namespace Moosetrail.Playgrounds.WebScrapers.Sweden
 
         private static Tuple<IEnumerable<string>, string> GetListOfUrlsToPlaygrounds(string url)
         {
-            var request = WebRequest.Create(url);
-            var response = request.GetResponse();
-            using var dataStream = response.GetResponseStream();
-            var reader = new StreamReader(dataStream);
-            var responseFromServer = reader.ReadToEnd();
-
-            var page = new HtmlDocument();
-            page.LoadHtml(responseFromServer);
+            var page = getDocumentFromServer(url);
 
             var playGroundList =
                 page.DocumentNode.Descendants().Where(x => x.HasClass("c-list") && x.HasClass("c-list--large"));
@@ -63,9 +64,23 @@ namespace Moosetrail.Playgrounds.WebScrapers.Sweden
             if (nextLink != null)
             {
                 var nextPage = nextLink.Descendants().Single(x => x.Name == "a").GetAttributeValue("href", "");
-                return new Tuple<IEnumerable<string>, string>(playgroundLinks, nextPage);
-            } else 
-                return new Tuple<IEnumerable<string>, string>(playgroundLinks, null);
+                //return new Tuple<IEnumerable<string>, string>(playgroundLinks, nextPage);
+            }
+            
+            return new Tuple<IEnumerable<string>, string>(playgroundLinks, null);
+        }
+
+        private static HtmlDocument getDocumentFromServer(string url)
+        {
+            var request = WebRequest.Create(url);
+            var response = request.GetResponse();
+            using var dataStream = response.GetResponseStream();
+            var reader = new StreamReader(dataStream);
+            var responseFromServer = reader.ReadToEnd();
+
+            var page = new HtmlDocument();
+            page.LoadHtml(responseFromServer);
+            return page;
         }
     }
 }
