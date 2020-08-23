@@ -1,4 +1,8 @@
-﻿namespace Moosetrail.Playgrounds.WebScrapers.Sweden
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Moosetrail.Playgrounds.Dataclasses;
+
+namespace Moosetrail.Playgrounds.WebScrapers.Sweden
 {
     public class GothenburgScraper
     {
@@ -10,6 +14,9 @@
 
         }
 
+        public Task<IEnumerable<Playground>> GetPlaygrounds()
+        {
 
+        }
     }
 }

@@ -8,4 +8,8 @@
     <Folder Include="ScraperTools\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Moosetrail.Playgrounds.Dataclasses\Moosetrail.Playgrounds.Dataclasses.csproj" />
+  </ItemGroup>
+
 </Project>
