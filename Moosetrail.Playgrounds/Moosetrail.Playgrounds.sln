@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.API", "Moosetrail.Playgrounds.API\Moosetrail.Playgrounds.API.csproj", "{846D7656-F707-43E7-B28C-377A4FC949A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.WebScrapers", "Moosetrail.Playgrounds.WebScrapers\Moosetrail.Playgrounds.WebScrapers.csproj", "{B9B77252-6DEE-48CE-9783-47F9F1D21996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moosetrail.Playgrounds.WebScrapers.Console", "Moosetrail.Playgrounds.WebScrapers.Console\Moosetrail.Playgrounds.WebScrapers.Console.csproj", "{616C03E7-CC3E-4B45-A43B-E44FD3CBAD1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{846D7656-F707-43E7-B28C-377A4FC949A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{846D7656-F707-43E7-B28C-377A4FC949A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{846D7656-F707-43E7-B28C-377A4FC949A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B77252-6DEE-48CE-9783-47F9F1D21996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B77252-6DEE-48CE-9783-47F9F1D21996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B77252-6DEE-48CE-9783-47F9F1D21996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B77252-6DEE-48CE-9783-47F9F1D21996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{616C03E7-CC3E-4B45-A43B-E44FD3CBAD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616C03E7-CC3E-4B45-A43B-E44FD3CBAD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616C03E7-CC3E-4B45-A43B-E44FD3CBAD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616C03E7-CC3E-4B45-A43B-E44FD3CBAD1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
