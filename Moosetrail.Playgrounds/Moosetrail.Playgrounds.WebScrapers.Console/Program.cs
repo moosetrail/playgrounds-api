@@ -12,7 +12,7 @@ namespace Moosetrail.Playgrounds.WebScrapers.Console
             System.Console.WriteLine("Welcome to the scraper for Playgrounds in Sweden!");
             System.Console.WriteLine("Now using {0} to get data", scraper.GetType());
 
-
+            var playgrounds = scraper.GetPlaygrounds().Result;
         }
     }
 }
