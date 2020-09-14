@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Moosetrail.Playgrounds.Dataclasses;
@@ -21,7 +22,7 @@ namespace Moosetrail.Playgrounds.WebScrapers.Sweden
 
         }
 
-        public Task<IEnumerable<Playground>> GetPlaygrounds()
+        public async Task<IEnumerable<Tuple<Playground, ScrapeData>>> GetPlaygrounds()
         {
             var url = entryPoint;
             var playgroundLinks = new List<string>();
@@ -37,16 +38,38 @@ namespace Moosetrail.Playgrounds.WebScrapers.Sweden
                     url = null;
             }
 
+            var playgroundList = new List<Tuple<Playground, ScrapeData>>();
+
             foreach (var playgroundLink in playgroundLinks)
             {
                 var page = getDocumentFromServer(playgroundLink);
 
-                var coordinatesCode = page.DocumentNode.Descendants().FirstOrDefault(x => x.InnerText.Contains("coordinates") && !x.HasChildNodes);
+                var infoCode = page.DocumentNode.Descendants().FirstOrDefault(x => x.InnerText.Contains("coordinates") && !x.HasChildNodes);
+                var coordMatch = Regex.Match(infoCode.InnerText, @"\[(\d*.\d*),(\d*.\d*)\]");
+                var name = Regex.Match(infoCode.InnerText, "name\":\"(.*?)\"");
 
+                var info = page.DocumentNode.Descendants().SingleOrDefault(x =>
+                    x.GetAttributeValue("xmlns:gbg", "") == "http://teik.goteborg.se/components" && x.Name == "p");
+
+                var playground = new Playground(name.Groups[1].Value, info.InnerText, Convert.ToDouble(coordMatch.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture), Convert.ToDouble(coordMatch.Groups[2].Value, System.Globalization.CultureInfo.InvariantCulture), playgroundLink, GetTags(page));
+                var scrapeData = new ScrapeData(playgroundLink, page.DocumentNode.OuterHtml);
+                playgroundList.Add(new Tuple<Playground, ScrapeData>(playground, scrapeData));
             }
-            
 
-            return null;
+            return playgroundList;
+        }
+
+        private static string[] GetTags(HtmlDocument page)
+        {
+            var tags = page.DocumentNode.Descendants().SingleOrDefault(x => x.HasClass("c-heading__byline"));
+
+            if (tags != null)
+            {
+                return tags.InnerText.Replace("\n", " ").Replace(", ", " ")
+                    .Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            }
+
+            return new string[0];
         }
 
         private static Tuple<IEnumerable<string>, string> GetListOfUrlsToPlaygrounds(string url)
@@ -64,7 +87,7 @@ namespace Moosetrail.Playgrounds.WebScrapers.Sweden
             if (nextLink != null)
             {
                 var nextPage = nextLink.Descendants().Single(x => x.Name == "a").GetAttributeValue("href", "");
-                //return new Tuple<IEnumerable<string>, string>(playgroundLinks, nextPage);
+                return new Tuple<IEnumerable<string>, string>(playgroundLinks, nextPage);
             }
             
             return new Tuple<IEnumerable<string>, string>(playgroundLinks, null);
