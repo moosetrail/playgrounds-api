@@ -7,12 +7,12 @@ namespace Moosetrail.Playgrounds.WebScrapers.Console
     {
         static void Main(string[] args)
         {
-            var scraper = new GothenburgScraper();
+            var scraper = new StockholmScraper();
 
             System.Console.WriteLine("Welcome to the scraper for Playgrounds in Sweden!");
             System.Console.WriteLine("Now using {0} to get data", scraper.GetType());
 
-            var playgrounds = scraper.GetPlaygrounds().Result;
+            var playgrounds = scraper.GetPlaygrounds();
         }
     }
 }
